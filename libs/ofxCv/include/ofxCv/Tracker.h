@@ -48,6 +48,7 @@
 #include <utility>
 #include <map>
 #include "ofMath.h"
+#include "ofVec3f.h"
 
 namespace ofxCv {
 	
@@ -55,6 +56,7 @@ namespace ofxCv {
 	
 	float trackingDistance(const cv::Rect& a, const cv::Rect& b);
 	float trackingDistance(const cv::Point2f& a, const cv::Point2f& b);
+	float trackingDistance(const ofVec3f& a, const ofVec3f& b);
 	
 	template <class T>
 	class TrackedObject {

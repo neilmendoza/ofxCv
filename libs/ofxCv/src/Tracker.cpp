@@ -21,12 +21,23 @@ namespace ofxCv {
 		float dy = a.y - b.y;
 		return sqrtf(dx * dx + dy * dy);
 	}
+    
+	float trackingDistance(const cv::Point3f& a, const cv::Point3f& b) {
+		float dx = a.x - b.x;
+		float dy = a.y - b.y;
+		float dz = a.z - b.z;
+		return sqrtf(dx * dx + dy * dy + dz * dz);
+	}
 	
 	float trackingDistance(const ofRectangle& a, const ofRectangle& b) {
 		return trackingDistance(toCv(a), toCv(b));
 	}
 	
 	float trackingDistance(const ofVec2f& a, const ofVec2f& b) {
+		return trackingDistance(toCv(a), toCv(b));
+	}
+    
+	float trackingDistance(const ofVec3f& a, const ofVec3f& b) {
 		return trackingDistance(toCv(a), toCv(b));
 	}
 	
